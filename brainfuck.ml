@@ -1,5 +1,5 @@
 (*
-    File : eval_gui.ml
+    File : brainfuck.ml
     Version : 1.0
     Author : max
 *)
