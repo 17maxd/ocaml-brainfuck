@@ -25,13 +25,13 @@ type mode = ASCII | Decimal
 
 (** BASIC FUNCTIONS AND SOHRTCUTS **)
 
-let hd l = List.hd l
-let tl l = List.tl l
+let hd = List.hd
+let tl = List.tl
 
 let (+=) a b = (a := (!a + b))
 let (-=) a b = (a := (!a - b))
 
-let (@@) array1 array2 = Array.append array1 array2
+let (@@) = Array.append
 
 let rec ( *@) arr n = if n <= 0 then [||] else arr @@ (arr *@ (n-1)) 
 let rec ( *^) str n = if n <= 0 then ""   else str  ^ (str *^ (n-1))
@@ -148,7 +148,7 @@ let input mode =
 
 let output i mode =
     if mode = Decimal then
-        print_string ("Sortie : " ^ (string_of_int i) ^ "\n")
+        (print_string ("Output: " ^ (string_of_int i)) ; print_newline ())
     else
         print_char (Char.chr i)
 
